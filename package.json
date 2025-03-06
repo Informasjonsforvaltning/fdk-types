@@ -1,0 +1,13 @@
+{
+  "name": "fdk-types",
+  "version": "1.0.0",
+  "license": "Apache-2.0",
+  "private": false,
+  "dependencies": {
+    "typescript": "^5.8.2"
+  },
+  "scripts": {
+    "transpile": "tsc",
+    "watch": "tsc -w"
+  }
+}

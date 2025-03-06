@@ -1,3 +1,9 @@
+.DS_Store
+.vscode
+.vs
+.idea
+.envrc
+
 # Logs
 logs
 *.log
