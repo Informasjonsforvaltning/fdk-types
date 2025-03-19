@@ -2,9 +2,12 @@ import {
   DataFormat,
   EntityType,
   AdministrativeUnitType,
+  SpecializedDatasetType,
   SpecializedEventType,
   LanguageCodes,
-  SearchObjectRelationType
+  SearchObjectRelationType,
+  AccessRightsCodes,
+  MediaTypeOrExtentType
 } from './enums';
 
 export interface SearchObject {
@@ -325,15 +328,15 @@ export interface Concept {
   created?: string;
   memberOf?: string[];
   remark?: Partial<TextLanguage>;
-  range?: { text?: Partial<TextLanguage>; uri?: stirng };
+  range?: { text?: Partial<TextLanguage>; uri?: string };
 }
 
 export interface ConceptDefinition {
   text?: Partial<TextLanguage>;
   remark?: Partial<TextLanguage>; // @deprecated
   targetGroup?: string;
-  sources?: Array<{ text?: Partial<TextLanguage>; uri?: stirng }>;
-  range?: { text?: Partial<TextLanguage>; uri?: stirng }; // @deprecated
+  sources?: Array<{ text?: Partial<TextLanguage>; uri?: string }>;
+  range?: { text?: Partial<TextLanguage>; uri?: string }; // @deprecated
   sourceRelationship?: string;
 }
 
@@ -456,7 +459,7 @@ interface PublicServiceContactPoint {
 export interface PublicService {
   id: string;
   type: EntityType.PUBLIC_SERVICE;
-  specializedType?: str | null;
+  specializedType?: string | null;
   uri: string;
   identifier: string;
   title: Partial<TextLanguage>;
@@ -540,7 +543,7 @@ interface EuDataTheme {
 }
 
 interface AccessRights {
-  code: string;
+  code: AccessRightsCodes;
 }
 
 interface ContactPoint {
@@ -640,6 +643,10 @@ interface InSeries {
   title: Partial<TextLanguage>;
 }
 
+export interface DatasetWithIdentifier extends Dataset {
+  identifier?: any;
+}
+
 export interface Dataset {
   id: string;
   uri: string;
@@ -677,7 +684,6 @@ export interface Dataset {
   language?: Partial<PrefLabelType>[];
   landingPage: string[];
   qualifiedAttributions: QualifiedAttribution[];
-  assessment?: Assessment;
   dctType?: DatasetType | string;
   specializedType?: SpecializedDatasetType;
   datasetsInSeries?: string[];

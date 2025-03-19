@@ -230,3 +230,9 @@ export enum MomentFormat {
 export enum Vocabulary {
   DATASET = 'http://www.w3.org/ns/dcat#Dataset'
 }
+
+export enum AccessRightsCodes {
+  PUBLIC = 'PUBLIC',
+  NON_PUBLIC = 'NON_PUBLIC',
+  RESTRICTED = 'RESTRICTED',
+}
