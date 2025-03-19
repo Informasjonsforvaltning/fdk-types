@@ -1,29 +1,3 @@
-export enum Namespace {
-  DEMO = 'demo',
-  STAGING = 'staging',
-  DEVELOPMENT = 'development',
-  PRODUCTION = 'prod'
-}
-
-export enum GoogleAnalyticsTrackingId {
-  FELLESDATAKATALOG = 'UA-110098477-1',
-  TRANSPORTPORTAL = 'UA-110098477-4',
-  LOCALHOST = 'UA-41886511-1'
-}
-
-export enum GoogleTagManagerId {
-  SVV = 'G-FPXKJ83PBS'
-}
-
-export enum SearchTypes {
-  dataset,
-  dataservice,
-  concept,
-  informationModel,
-  publicService,
-  event
-}
-
 export enum EntityType {
   DATASET = 'DATASET',
   DATA_SERVICE = 'DATA_SERVICE',
@@ -52,17 +26,6 @@ export enum DataFormat {
   UNKNOWN = 'unknown'
 }
 
-export enum MediaTypeOrExtentType {
-  MEDIA_TYPE = 'MEDIA_TYPE',
-  FILE_TYPE = 'FILE_TYPE',
-  UNKNOWN = 'UNKNOWN'
-}
-
-export enum SortOrder {
-  ASC,
-  DSC
-}
-
 export enum Filter {
   LASTXDAYS = 'lastXDays',
   OPENDATA = 'opendata',
@@ -78,13 +41,6 @@ export enum Filter {
   SORTFIELD = 'sortfield',
   CATALOGNAME = 'catalog_name',
   EVENT_TYPE = 'eventType'
-}
-
-export enum MetadataQualityRatingCategory {
-  EXCELLENT = 'excellent',
-  GOOD = 'good',
-  SUFFICIENT = 'sufficient',
-  POOR = 'poor'
 }
 
 export enum MetadataQualityDimension {
@@ -124,25 +80,6 @@ export enum MetadataQualityMetric {
   TEMPORAL_AVAILABILITY = 'https://data.norge.no/vocabulary/dcatno-mqa#temporalAvailability'
 }
 
-export enum ModelElementType {
-  ATTRIBUTE = 'attribute',
-  ROLE = 'role',
-  CODE_ELEMENT = 'code_element',
-  ASSOCIATION = 'association',
-  SPECIALIZATION = 'specialization',
-  CHOICE = 'choice',
-  MULTIPLE_CHOICE = 'multiple_choice',
-  COLLECTION = 'collection',
-  COMPOSITION = 'composition',
-  BIDIR_IN = 'bidir_in',
-  BIDIR_OUT = 'bidir_out'
-}
-
-export enum FeedType {
-  RSS = 'rss',
-  ATOM = 'atom'
-}
-
 export enum AdministrativeUnitType {
   NATION = 'http://rdf.kartverket.no/onto/adm_enhet_4.0.owl#Nasjon',
   COUNTY = 'http://rdf.kartverket.no/onto/adm_enhet_4.0.owl#Fylke',
@@ -156,29 +93,6 @@ export enum SpecializedEventType {
 
 export enum SpecializedDatasetType {
   DATASET_SERIES = 'datasetSeries'
-}
-
-export enum CommunityTerm {
-  DAY = 'day',
-  WEEK = 'week',
-  MONTH = 'month',
-  ALL = ''
-}
-
-export enum SuggestionIndexEnum {
-  '/datasets' = '/datasets',
-  '/data-services' = '/data-services',
-  '/concepts' = '/concepts',
-  '/information-models' = '/information-models',
-  '/public-services-and-events' = '/services-and-events'
-}
-
-export enum LanguageCodes {
-  nb = 'nb',
-  nn = 'nn',
-  en = 'en',
-  no = 'no',
-  none = ''
 }
 
 export enum SemanticRelation {
@@ -221,10 +135,6 @@ export enum SearchObjectRelationType {
   requires = 'requires',
   isRequiredBy = 'isRequiredBy',
   source = 'source'
-}
-
-export enum MomentFormat {
-  DD_MM_YYYY_HH_mm = 'DD.MM.YYYY HH:mm'
 }
 
 export enum Vocabulary {
