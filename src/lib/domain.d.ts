@@ -1,6 +1,6 @@
 import {
   DataFormat,
-  Entity as EntityEnum,
+  EntityType,
   AdministrativeUnitType,
   SpecializedEventType,
   LanguageCodes,
@@ -21,7 +21,7 @@ export interface SearchObject {
   losTheme?: LosNode[];
   organization?: Organization;
   provenance?: ReferenceDataCode;
-  searchType: EntityEnum;
+  searchType: EntityType;
   specializedType?: SpecializedDatasetType | SpecializedEventType;
   spatial?: ReferenceDataCode[];
   title?: Partial<TextLanguage>;
@@ -455,7 +455,7 @@ interface PublicServiceContactPoint {
 
 export interface PublicService {
   id: string;
-  type: EntityEnum.PUBLIC_SERVICE;
+  type: EntityType.PUBLIC_SERVICE;
   specializedType?: str | null;
   uri: string;
   identifier: string;
@@ -1195,7 +1195,7 @@ export interface SearchSuggestion {
   description?: Partial<TextLanguage>;
   uri?: string;
   organization?: Organization;
-  searchType: EntityEnum;
+  searchType: EntityType;
 }
 
 export interface Comment {
