@@ -24,7 +24,7 @@ export enum SearchTypes {
   event
 }
 
-export enum Entity {
+export enum EntityType {
   DATASET = 'DATASET',
   DATA_SERVICE = 'DATA_SERVICE',
   CONCEPT = 'CONCEPT',
@@ -181,7 +181,7 @@ export enum LanguageCodes {
   none = ''
 }
 
-export enum Relation {
+export enum SemanticRelation {
   ASSOSIATIV = 'assosiativ',
   GENERISK = 'generisk',
   PARTITIV = 'partitiv'
