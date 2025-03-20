@@ -51,6 +51,12 @@ export enum MetadataQualityDimension {
   REUSABILITY = 'https://data.norge.no/vocabulary/dcatno-mqa#reusability'
 }
 
+export enum MediaTypeOrExtentType {
+  MEDIA_TYPE = 'MEDIA_TYPE',
+  FILE_TYPE = 'FILE_TYPE',
+  UNKNOWN = 'UNKNOWN'
+}
+
 export enum MetadataQualityMetric {
   ACCESS_RIGHTS_AVAILABILITY = 'https://data.norge.no/vocabulary/dcatno-mqa#accessRightsAvailability',
   ACCESS_RIGHTS_VOCABULARY_ALIGNMENT = 'https://data.norge.no/vocabulary/dcatno-mqa#accessRightsVocabularyAlignment',
@@ -145,4 +151,12 @@ export enum AccessRightsCodes {
   PUBLIC = 'PUBLIC',
   NON_PUBLIC = 'NON_PUBLIC',
   RESTRICTED = 'RESTRICTED',
+}
+
+export enum LanguageCodes {
+  nb = 'nb',
+  nn = 'nn',
+  en = 'en',
+  no = 'no',
+  none = ''
 }
