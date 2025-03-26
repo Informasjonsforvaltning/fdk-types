@@ -689,6 +689,7 @@ export interface Dataset {
   datasetsInSeries?: string[];
   inSeries?: InSeries;
   isOpenData: boolean;
+  page?: string[];
 }
 
 export interface DataService {
