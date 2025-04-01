@@ -233,7 +233,8 @@ export interface PlaysRole {
 
 export interface Harvest {
   firstHarvested: string;
-  lastHarvested: string;
+  lastHarvested?: string;
+  modified?: string;
 }
 
 interface Metadata {
