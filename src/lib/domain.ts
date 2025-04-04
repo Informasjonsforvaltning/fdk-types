@@ -607,7 +607,7 @@ interface ApiSpecification {
   label: Partial<TextLanguage>;
 }
 
-interface DatasetReference {
+export interface DatasetReference {
   referenceType: PrefLabelType;
   source?: { uri?: string; prefLabel: Partial<TextLanguage> };
 }
