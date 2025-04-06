@@ -256,6 +256,7 @@ export interface LosTheme {
   uri: string;
   name: Partial<TextLanguage>;
   losPaths?: string[];
+  code?: string;
 }
 
 export interface EuThemes {
@@ -620,7 +621,7 @@ interface AccrualPeriodicity {
   prefLabel: Partial<TextLanguage>;
 }
 
-interface DatasetType {
+export interface DatasetType {
   uri: string;
   code: string;
   prefLabel: Partial<TextLanguage>;
