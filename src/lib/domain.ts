@@ -734,6 +734,7 @@ export interface AccessService {
   description: Partial<TextLanguage>;
   endpointDescription?: string[];
   uri: string;
+  title?: string;
 }
 
 export interface Distribution {
