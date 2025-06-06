@@ -1,5 +1,5 @@
 {
-  "name": "@Informasjonsforvaltning/fdk-types",
+  "name": "@fellesdatakatalog/types",
   "version": "1.0.0",
   "private": false,
   "dependencies": {
