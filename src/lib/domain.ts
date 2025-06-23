@@ -627,13 +627,6 @@ export interface DatasetType {
   prefLabel: Partial<TextLanguage>;
 }
 
-interface Sample {
-  description?: Partial<TextLanguage>;
-  format: DataFormat[];
-  accessURL: string[];
-  downloadURL: string[];
-}
-
 interface LegalBasis {
   uri: string;
   prefLabel: Partial<TextLanguage>;
@@ -677,7 +670,7 @@ export interface Dataset {
   hasAccuracyAnnotation?: Partial<Annotation>;
   hasAvailabilityAnnotation?: Partial<Annotation>;
   hasCurrentnessAnnotation?: Partial<Annotation>;
-  sample?: Sample[];
+  sample?: Distribution[];
   legalBasisForRestriction?: LegalBasis[];
   legalBasisForProcessing?: LegalBasis[];
   legalBasisForAccess?: LegalBasis[];
@@ -716,12 +709,12 @@ export interface DataService {
   contactPoint?: Partial<ContactPoint>[];
 }
 
-interface License {
+export interface License {
   uri: string;
   prefLabel?: Partial<TextLanguage>;
 }
 
-interface ConformsTo {
+export interface ConformsTo {
   uri: string;
   prefLabel?: Partial<TextLanguage>;
 }
