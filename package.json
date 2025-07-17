@@ -1,6 +1,7 @@
 {
   "name": "@fellesdatakatalog/types",
   "version": "1.0.0",
+  "main": "src/index.ts",
   "private": false,
   "dependencies": {
     "typescript": "^5.8.2"
