@@ -1,17 +1,13 @@
 {
   "compilerOptions": {
-    "target": "es2015",
-    "module": "esnext",
-    "moduleResolution": "node",
-    "strict": true,
-    "baseUrl": ".",
     "outDir": "dist",
+    "declaration": true,
+    "declarationDir": "dist",
+    "module": "CommonJS",
+    "target": "ES6",
     "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "allowJs": false,
-    "noEmit": true
+    "strict": true,
+    "skipLibCheck": true
   },
-  "include": ["src"],
-  "exclude": ["dist"]
+  "include": ["src/**/*"]
 }

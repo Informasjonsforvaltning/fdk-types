@@ -1,13 +1,13 @@
 {
   "name": "@fellesdatakatalog/types",
-  "version": "1.0.1",
-  "main": "src/index.ts",
+  "version": "1.0.2",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "private": false,
   "dependencies": {
     "typescript": "^5.8.2"
   },
   "scripts": {
-    "transpile": "tsc",
-    "watch": "tsc -w"
+    "build": "tsc"
   }
 }
