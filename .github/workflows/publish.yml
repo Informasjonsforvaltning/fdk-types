@@ -1,4 +1,4 @@
-name: Publish to npm
+name: Publish to npm on push to main
 
 on:
   push:
@@ -6,61 +6,70 @@ on:
       - main
 
 jobs:
-  publish:
-    name: Publish package
+  release:
+    if: github.actor != 'fdk-bot'
     runs-on: ubuntu-latest
     permissions:
-      contents: read
-
+      contents: write
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
-          node-version: '20'
-          registry-url: 'https://registry.npmjs.org'
-          cache: 'yarn'
+          node-version: 20
+          registry-url: 'https://registry.npmjs.org/'
 
-      - name: Enable Corepack (Yarn)
+      - name: Enable Corepack (Yarn 4)
         run: corepack enable
 
       - name: Install dependencies
         run: yarn install --immutable
 
-      - name: Build
-        run: yarn build
-
-      - name: Determine package and version
-        id: pkg
-        shell: bash
+      - name: Run tests
         run: |
-          NAME=$(node -p "require('./package.json').name")
-          VERSION=$(node -p "require('./package.json').version")
-          echo "name=$NAME" >> $GITHUB_OUTPUT
-          echo "version=$VERSION" >> $GITHUB_OUTPUT
-
-      - name: Check if version already exists on npm
-        id: exists
-        shell: bash
-        env:
-          NAME: ${{ steps.pkg.outputs.name }}
-          VERSION: ${{ steps.pkg.outputs.version }}
-        run: |
-          if npm view "$NAME@$VERSION" version > /dev/null 2>&1; then
-            echo "exists=true" >> $GITHUB_OUTPUT
-            echo "Version $NAME@$VERSION already exists. Skipping publish."
+          if yarn run -T test -v >/dev/null 2>&1; then
+            yarn test --run
           else
-            echo "exists=false" >> $GITHUB_OUTPUT
-            echo "Version $NAME@$VERSION does not exist. Will publish."
+            echo "No tests configured, skipping"
           fi
 
-      - name: Publish to npm
-        if: steps.exists.outputs.exists == 'false'
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Build package
+        run: yarn build
+
+      - name: Configure git user
         run: |
-          npm publish --access public
+          git config user.name "fdk-bot"
+          git config user.email "fdk-bot@users.noreply.github.com"
+
+      - name: Bump version (patch) and create tag
+        run: |
+          npm version patch -m "ci: release %s"
+
+      - name: Publish to npm
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_BOT_TOKEN }}
+        run: |
+          if npm publish --access public; then
+            echo "✅ Package published successfully"
+          else
+            echo "❌ npm publish failed, rolling back git tag"
+            git tag -d "v$(node -p "require('./package.json').version")"
+            exit 1
+          fi
+
+      - name: Push changes and tags
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if git push origin HEAD:main --follow-tags; then
+            echo "✅ Changes and tags pushed successfully"
+          else
+            echo "❌ Failed to push changes to repository"
+            exit 1
+          fi
 
 
