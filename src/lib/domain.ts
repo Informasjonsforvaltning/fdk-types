@@ -653,6 +653,7 @@ export interface Dataset {
   keyword: Partial<TextLanguage>[];
   theme?: EuTheme[];
   losTheme?: LosTheme[];
+  mobilityTheme?: ReferenceDataCode[];
   issued: string;
   modified: string;
   distribution: Distribution[];
@@ -741,6 +742,9 @@ export interface Distribution {
   conformsTo: ConformsTo[];
   page?: Page[];
   accessService?: AccessService[];
+  status?: ReferenceDataCode;
+  mobilityDataStandard?: ReferenceDataCode;
+  rights?: RightsStatement;
 }
 
 export interface MediaTypeOrExtent {
@@ -748,6 +752,11 @@ export interface MediaTypeOrExtent {
   name?: string;
   code: string;
   type: MediaTypeOrExtentType;
+}
+
+export interface RightsStatement {
+  type?: ReferenceDataCode;
+  description?: Partial<TextLanguage>;
 }
 
 export interface ReferenceData {
