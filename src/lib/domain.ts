@@ -549,6 +549,7 @@ interface AccessRights {
 }
 
 interface ContactPoint {
+  formattedName: Partial<TextLanguage>;
   email: string;
   uri: string;
   organizationUnit: string;
@@ -559,6 +560,7 @@ interface ContactPoint {
 
 interface InformationModelContactPoint {
   uri: string;
+  formattedName: Partial<TextLanguage>;
   fullname: string;
   email: string;
   organizationName: string;
@@ -568,6 +570,7 @@ interface InformationModelContactPoint {
 }
 
 interface ConceptContactPoint {
+  formattedName: Partial<TextLanguage>;
   email: string;
   telephone: string;
 }
