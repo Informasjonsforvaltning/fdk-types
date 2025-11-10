@@ -271,6 +271,13 @@ export interface EuTheme {
 
 export type Theme = LosTheme | EuTheme;
 
+export interface EurovocTheme {
+  uri?: string;
+  code?: string;
+  label?: Partial<TextLanguage>;
+  eurovocPaths?: string[];
+}
+
 export interface Type {
   identifier: string;
   name: Partial<TextLanguage>;
@@ -466,7 +473,7 @@ export interface PublicService {
   dctType?: PublicServiceType[];
   description: Partial<TextLanguage>;
   euDataThemes?: EuDataTheme[];
-  eurovocThemes?: Partial<Concept>[];
+  eurovocThemes?: EurovocTheme[];
   follows?: PublicServiceRule[];
   harvest?: Partial<Harvest>;
   hasChannel?: PublicServiceChannel[];
