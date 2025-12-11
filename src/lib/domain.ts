@@ -701,6 +701,7 @@ export interface Dataset {
   datasetsInSeries?: string[];
   inSeries?: InSeries;
   isOpenData: boolean;
+  isRelatedToTransportportal: boolean;
   page?: string[];
 }
 
