@@ -11,6 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      id-token: write
     steps:
       - name: Checkout
         uses: actions/checkout@v5
@@ -51,8 +52,6 @@ jobs:
           npm version patch -m "ci: release %s"
 
       - name: Publish to npm
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_BOT_TOKEN }}
         run: |
           if npm publish --access public; then
             echo "✅ Package published successfully"
@@ -70,5 +69,3 @@ jobs:
             echo "❌ Failed to push changes to repository"
             exit 1
           fi
-
-
