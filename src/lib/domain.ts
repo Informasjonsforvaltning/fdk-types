@@ -500,7 +500,7 @@ export interface PublicService {
   relation?: PublicService[];
   requires?: PublicService[];
   sector?: Partial<Concept>[];
-  spatial: string[];
+  spatial?: SpatialRestriction[];
   specializedType?: string | null;
   subject?: Partial<Concept>[];
   thematicAreaUris?: string[];
