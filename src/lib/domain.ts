@@ -502,7 +502,7 @@ export interface PublicService {
   sector?: Partial<Concept>[];
   spatial?: SpatialRestriction[];
   specializedType?: string | null;
-  subject?: Partial<Concept>[];
+  subject?: ReferenceDataType[];
   thematicAreaUris?: string[];
   title: Partial<TextLanguage>;
   type: EntityType.PUBLIC_SERVICE;
