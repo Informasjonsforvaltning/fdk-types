@@ -7,8 +7,8 @@ import {
   LanguageCodes,
   SearchObjectRelationType,
   AccessRightsCodes,
-  MediaTypeOrExtentType
-} from './enums';
+  MediaTypeOrExtentType,
+} from "./enums";
 
 export interface SearchObject {
   id: string;
@@ -470,7 +470,7 @@ export interface PublicService {
   associatedBroaderTypesByEvents?: string[];
   catalog?: Catalog;
   contactPoint?: PublicServiceContactPoint[];
-  dctType?: PublicServiceType[];
+  dctType?: ReferenceDataCode[];
   description: Partial<TextLanguage>;
   euDataThemes?: EuDataTheme[];
   eurovocThemes?: EurovocTheme[];
@@ -1114,8 +1114,8 @@ export interface CommunityUser {
   signature?: string;
   banned: number;
   status: string;
-  'icon:text': string;
-  'icon:bgColor': string;
+  "icon:text": string;
+  "icon:bgColor": string;
   banned_until_readable: string;
 }
 
