@@ -9,7 +9,7 @@
     "url": "https://github.com/Informasjonsforvaltning/fdk-types"
   },
   "dependencies": {
-    "typescript": "^5.8.2"
+    "typescript": "^5.9.3"
   },
   "scripts": {
     "build": "tsc"
