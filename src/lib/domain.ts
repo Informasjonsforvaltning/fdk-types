@@ -1226,6 +1226,23 @@ export interface SearchSuggestion {
   searchType: EntityType;
 }
 
+export type LlmSearchHitType =
+  'dataset' |
+  'dataservice' |
+  'concept' |
+  'informationmodel' |
+  'service' |
+  'event';
+
+export interface LlmSearchResult {
+    id: string;
+    title: string;
+    description: string;
+    type: LlmSearchHitType;
+    publisher: string;
+    publisherId: string;
+}
+
 export interface Comment {
   commentId: string;
   userId: string;
