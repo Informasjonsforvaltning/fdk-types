@@ -725,6 +725,7 @@ export interface DataService {
   conformsTo?: ConformsTo[];
   servesDataset?: string[];
   contactPoint?: Partial<ContactPoint>[];
+  version?: string;
 }
 
 export interface License {
