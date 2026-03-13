@@ -726,6 +726,15 @@ export interface DataService {
   servesDataset?: string[];
   contactPoint?: Partial<ContactPoint>[];
   version?: string;
+  costs?: DataServiceCost[];
+  keyword?: Partial<TextLanguage>[];
+}
+
+export interface DataServiceCost {
+  currency?: ReferenceDataCode;
+  description?: Partial<TextLanguage>;
+  documentation?: string[];
+  hasValue?: string;
 }
 
 export interface License {
