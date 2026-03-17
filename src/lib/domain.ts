@@ -1,5 +1,4 @@
 import {
-  DataFormat,
   EntityType,
   AdministrativeUnitType,
   SpecializedDatasetType,
@@ -728,6 +727,7 @@ export interface DataService {
   version?: string;
   costs?: DataServiceCost[];
   keyword?: Partial<TextLanguage>[];
+  license?: InformationModelLicense[];
 }
 
 export interface DataServiceCost {
