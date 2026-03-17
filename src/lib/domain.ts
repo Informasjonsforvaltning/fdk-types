@@ -76,7 +76,7 @@ export interface InformationModel {
   validFromIncluding?: string;
   validToIncluding?: string;
   versionInfo?: string;
-  license?: InformationModelLicense[];
+  license?: ReferenceDataCode[];
   language?: InformationModelLanguage[];
   keyword?: Partial<TextLanguage>[];
   category?: string;
@@ -158,12 +158,6 @@ export interface InformationModelProperty {
   hasGeneralConcept: string | null;
   formsSymmetryWith: string | null;
   relationPropertyLabel: Partial<TextLanguage> | null;
-}
-
-interface InformationModelLicense {
-  uri: string;
-  code: string;
-  prefLabel: Partial<TextLanguage>;
 }
 
 interface InformationModelLanguage {
@@ -727,7 +721,7 @@ export interface DataService {
   version?: string;
   costs?: DataServiceCost[];
   keyword?: Partial<TextLanguage>[];
-  license?: InformationModelLicense[];
+  license?: ReferenceDataCode[];
 }
 
 export interface DataServiceCost {
@@ -735,11 +729,6 @@ export interface DataServiceCost {
   description?: Partial<TextLanguage>;
   documentation?: string[];
   hasValue?: string;
-}
-
-export interface License {
-  uri: string;
-  prefLabel?: Partial<TextLanguage>;
 }
 
 export interface ConformsTo {
@@ -763,7 +752,7 @@ export interface Distribution {
   title: Partial<TextLanguage>;
   description: Partial<TextLanguage>;
   fdkFormat: MediaTypeOrExtent[];
-  license: License[];
+  license: ReferenceDataCode[];
   accessURL: string[];
   downloadURL: string[];
   conformsTo: ConformsTo[];
