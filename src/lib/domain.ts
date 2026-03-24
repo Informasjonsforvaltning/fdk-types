@@ -699,6 +699,7 @@ export interface Dataset {
 }
 
 export interface DataService {
+  accessRights?: ReferenceDataCode;
   id: string;
   uri: string;
   publisher: Partial<Organization>;
