@@ -438,16 +438,6 @@ export interface PublicServiceChannel {
   url: string[];
 }
 
-export interface PublicServiceCost {
-  uri: string;
-  identifier: string;
-  description: Partial<TextLanguage>;
-  currency: string;
-  ifAccessedThrough: PublicServiceChannel;
-  isDefinedBy: Partial<Organization>[];
-  value: string;
-}
-
 interface PublicServiceContactPoint {
   uri: string;
   contactType: Partial<TextLanguage>;
@@ -471,7 +461,7 @@ export interface PublicService {
   harvest?: Partial<Harvest>;
   hasChannel?: PublicServiceChannel[];
   hasCompetentAuthority?: Partial<Organization>[];
-  hasCost?: PublicServiceCost[];
+  costs?: Cost[];
   hasCriterion?: PublicServiceCriterionRequirement[];
   hasInput?: PublicServiceInput[];
   hasLegalResource?: PublicServiceLegalResource[];
@@ -696,6 +686,7 @@ export interface Dataset {
   isOpenData: boolean;
   isRelatedToTransportportal: boolean;
   page?: string[];
+  costs?: Cost[];
 }
 
 export interface DataService {
@@ -720,16 +711,18 @@ export interface DataService {
   servesDataset?: string[];
   contactPoint?: Partial<ContactPoint>[];
   version?: string;
-  costs?: DataServiceCost[];
+  costs?: Cost[];
   keyword?: Partial<TextLanguage>[];
   license?: ReferenceDataCode;
 }
 
-export interface DataServiceCost {
+export interface Cost {
+  identifier: string;
   currency?: ReferenceDataCode;
   description?: Partial<TextLanguage>;
   documentation?: string[];
   hasValue?: string;
+  isDefinedBy: Partial<Organization>[];
 }
 
 export interface ConformsTo {
