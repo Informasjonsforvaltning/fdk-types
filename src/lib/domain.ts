@@ -364,6 +364,7 @@ export interface PublicServiceOutput {
   description: Partial<TextLanguage>;
   type: Partial<Concept>[];
   language: PublicServiceLanguage[];
+  isPartOf: string[];
 }
 
 export interface PublicServiceCriterionRequirement {
