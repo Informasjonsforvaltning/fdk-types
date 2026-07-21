@@ -674,7 +674,7 @@ export interface Dataset {
   language?: Partial<PrefLabelType>[];
   landingPage: string[];
   qualifiedAttributions: QualifiedAttribution[];
-  dctType?: ReferenceDataCode[];
+  dctType?: ReferenceDataCode[] | ReferenceDataCode;
   specializedType?: SpecializedDatasetType;
   datasetsInSeries?: string[];
   inSeries?: InSeries;
