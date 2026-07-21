@@ -680,7 +680,7 @@ export interface Dataset {
   language?: Partial<PrefLabelType>[];
   landingPage: string[];
   qualifiedAttributions: QualifiedAttribution[];
-  dctType?: DatasetType | string;
+  dctType?: (DatasetType | string)[];
   specializedType?: SpecializedDatasetType;
   datasetsInSeries?: string[];
   inSeries?: InSeries;
