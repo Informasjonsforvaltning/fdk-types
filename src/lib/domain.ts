@@ -621,12 +621,6 @@ interface AccrualPeriodicity {
   prefLabel: Partial<TextLanguage>;
 }
 
-export interface DatasetType {
-  uri: string;
-  code: string;
-  prefLabel: Partial<TextLanguage>;
-}
-
 interface LegalBasis {
   uri: string;
   prefLabel: Partial<TextLanguage>;
@@ -680,7 +674,7 @@ export interface Dataset {
   language?: Partial<PrefLabelType>[];
   landingPage: string[];
   qualifiedAttributions: QualifiedAttribution[];
-  dctType?: DatasetType | string;
+  dctType?: ReferenceDataCode[];
   specializedType?: SpecializedDatasetType;
   datasetsInSeries?: string[];
   inSeries?: InSeries;
