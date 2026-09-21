@@ -680,6 +680,7 @@ export interface Dataset {
   inSeries?: InSeries;
   isOpenData: boolean;
   isRelatedToTransportportal: boolean;
+  dcatProfiles?: string[];
   page?: string[];
   costs?: Cost[];
 }
