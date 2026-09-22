@@ -29,6 +29,7 @@ export interface SearchObject {
   title?: Partial<TextLanguage>;
   relations?: Relation[];
   isAuthoritative?: boolean;
+  dcatProfiles?: string[];
 }
 
 interface Catalog {
