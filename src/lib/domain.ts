@@ -71,7 +71,7 @@ export interface InformationModel {
   modelDescription?: Partial<TextLanguage>;
   isDescribedByUri?: string;
   dctType?: string;
-  status?: string;
+  statusCode?: Partial<ReferenceDataCode>;
   issued?: string;
   modified?: string;
   validFromIncluding?: string;
