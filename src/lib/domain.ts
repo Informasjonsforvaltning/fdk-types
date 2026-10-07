@@ -50,6 +50,7 @@ export interface InformationModel {
   uri: string;
   identifier?: string;
   publisher?: Partial<Organization>;
+  creator: Partial<Organization>;
   harvestSourceUri?: string;
   harvest?: Partial<Harvest>;
   title?: Partial<TextLanguage>;
