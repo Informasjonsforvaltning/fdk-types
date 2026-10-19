@@ -60,10 +60,14 @@ export interface InformationModel {
   subjects?: string[];
   modelElements?: Record<string, Partial<InformationModelElement>>;
   modelProperties?: Record<string, Partial<InformationModelProperty>>;
-  isPartOf?: string;
-  hasPart?: string;
-  isReplacedBy?: string;
-  replaces?: string;
+  isPartOf?: string; // @deprecated Use isPartOfList instead.
+  hasPart?: string; // @deprecated Use hasPartList instead.
+  isReplacedBy?: string; // @deprecated Use isReplacedByList instead.
+  replaces?: string; // @deprecated Use replacesList instead.
+  isPartOfList?: string[];
+  hasPartList?: string[];
+  isReplacedByList?: string[];
+  replacesList?: string[];
   objectTypes?: Partial<Node>[];
   codeTypes?: Partial<Node>[];
   dataTypes?: Partial<Node>[];
