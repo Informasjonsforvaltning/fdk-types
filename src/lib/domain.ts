@@ -1185,7 +1185,7 @@ export interface InformationModelFormat {
   uri: string;
   title: Partial<TextLanguage>;
   format: string;
-  language: string;
+  language: ReferenceDataCode;
   seeAlso?: string;
 }
 
