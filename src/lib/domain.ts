@@ -397,12 +397,14 @@ export interface PublicServiceRequirement {
   uri: string;
 }
 
-export interface PublicServiceLegalResource {
-  dctTitle: Partial<TextLanguage>;
-  description: Partial<TextLanguage>;
-  relation: string[];
-  seeAlso: string[];
-  uri: string;
+export interface LegalResource {
+  uri?: string;
+  title?: Partial<TextLanguage>;
+  description?: Partial<TextLanguage>;
+  references?: string[];
+  relation?: string[];
+  language?: ReferenceDataCode[];
+  type?: ReferenceDataCode;
 }
 
 export interface PublicServiceInput {
@@ -471,7 +473,7 @@ export interface PublicService {
   costs?: Cost[];
   hasCriterion?: PublicServiceCriterionRequirement[];
   hasInput?: PublicServiceInput[];
-  hasLegalResource?: PublicServiceLegalResource[];
+  hasLegalResource?: LegalResource[];
   hasParticipation?: PublicServiceParticipation[];
   holdsRequirement?: PublicServiceRequirement[];
   homepage?: string[];
@@ -672,6 +674,7 @@ export interface Dataset {
   hasAvailabilityAnnotation?: Partial<Annotation>;
   hasCurrentnessAnnotation?: Partial<Annotation>;
   sample?: Distribution[];
+  applicableLegislation?: LegalResource[];
   legalBasisForRestriction?: LegalBasis[];
   legalBasisForProcessing?: LegalBasis[];
   legalBasisForAccess?: LegalBasis[];
