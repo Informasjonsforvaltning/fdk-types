@@ -45,7 +45,11 @@ export interface Relation {
   type?: SearchObjectRelationType;
 }
 
-export interface InformationModel {
+export interface EntityBase {
+  isRemovedFromFDK?: boolean;
+}
+
+export interface InformationModel extends EntityBase {
   id: string;
   uri: string;
   identifier?: string;
@@ -310,7 +314,7 @@ export interface GenericRelation {
   specializes: string;
 }
 
-export interface Concept {
+export interface Concept extends EntityBase {
   id: string;
   uri: string;
   identifier: string;
@@ -457,7 +461,7 @@ interface PublicServiceContactPoint {
   telephone: string[];
 }
 
-export interface PublicService {
+export interface PublicService extends EntityBase {
   admsStatus?: PublicServiceLanguage;
   associatedBroaderTypesByEvents?: string[];
   catalog?: Catalog;
@@ -507,7 +511,7 @@ export interface PublicServiceAddress {
   countryName: Partial<TextLanguage>;
 }
 
-export interface Event {
+export interface Event extends EntityBase {
   id: string;
   uri: string;
   identifier: string;
@@ -645,7 +649,7 @@ export interface DatasetWithIdentifier extends Dataset {
   identifier?: any;
 }
 
-export interface Dataset {
+export interface Dataset extends EntityBase {
   id: string;
   uri: string;
   publisher: Partial<Organization>;
@@ -696,7 +700,7 @@ export interface Dataset {
   costs?: Cost[];
 }
 
-export interface DataService {
+export interface DataService extends EntityBase {
   accessRights?: ReferenceDataCode;
   status?: ReferenceDataCode;
   availability?: ReferenceDataCode;
