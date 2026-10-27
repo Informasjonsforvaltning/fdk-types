@@ -623,6 +623,7 @@ export interface DatasetReference {
 
 interface Annotation {
   hasBody: Partial<TextLanguage>;
+  qualityDimensions: ReferenceDataCode[];
 }
 
 interface AccrualPeriodicity {
@@ -668,11 +669,11 @@ export interface Dataset {
   temporal?: TemporalRestriction[];
   references?: DatasetReference[];
   subject?: Partial<Concept>[];
-  hasRelevanceAnnotation?: Partial<Annotation>;
-  hasCompletenessAnnotation?: Partial<Annotation>;
-  hasAccuracyAnnotation?: Partial<Annotation>;
-  hasAvailabilityAnnotation?: Partial<Annotation>;
-  hasCurrentnessAnnotation?: Partial<Annotation>;
+  hasRelevanceAnnotation?: Partial<Annotation>; // @deprecated Use qualityAnnotations instead.
+  hasCompletenessAnnotation?: Partial<Annotation>; // @deprecated Use qualityAnnotations instead.
+  hasAccuracyAnnotation?: Partial<Annotation>; // @deprecated Use qualityAnnotations instead.
+  hasAvailabilityAnnotation?: Partial<Annotation>; // @deprecated Use qualityAnnotations instead.
+  hasCurrentnessAnnotation?: Partial<Annotation>; // @deprecated Use qualityAnnotations instead.
   sample?: Distribution[];
   applicableLegislation?: LegalResource[];
   legalBasisForRestriction?: LegalBasis[];
@@ -683,6 +684,7 @@ export interface Dataset {
   language?: Partial<PrefLabelType>[];
   landingPage: string[];
   qualifiedAttributions: QualifiedAttribution[];
+  qualityAnnotations: Annotation[];
   dctType?: ReferenceDataCode[] | ReferenceDataCode;
   specializedType?: SpecializedDatasetType;
   datasetsInSeries?: string[];
