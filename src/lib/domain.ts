@@ -661,6 +661,7 @@ export interface Dataset extends EntityBase {
   theme?: EuTheme[];
   losTheme?: LosTheme[];
   mobilityTheme?: ReferenceDataCode[];
+  hvdCategory?: ReferenceDataCode[];
   issued: string;
   modified: string;
   distribution: Distribution[];
