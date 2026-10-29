@@ -781,6 +781,7 @@ export interface MediaTypeOrExtent {
 export interface RightsStatement {
   type?: ReferenceDataCode;
   description?: Partial<TextLanguage>;
+  reuserGuidelines?: string[];
 }
 
 export interface ReferenceData {
