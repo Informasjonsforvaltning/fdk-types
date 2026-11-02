@@ -741,6 +741,7 @@ export interface Cost {
 
 export interface ConformsTo {
   uri: string;
+  seeAlso?: string[];
   prefLabel?: Partial<TextLanguage>;
 }
 
