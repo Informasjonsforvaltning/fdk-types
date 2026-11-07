@@ -46,17 +46,17 @@ export interface Relation {
 }
 
 export interface EntityBase {
+  id: string;
+  uri: string;
+  harvest?: Partial<Harvest>;
   isRemovedFromFDK?: boolean;
 }
 
 export interface InformationModel extends EntityBase {
-  id: string;
-  uri: string;
   identifier?: string;
   publisher?: Partial<Organization>;
   creator: Partial<Organization>;
   harvestSourceUri?: string;
-  harvest?: Partial<Harvest>;
   title?: Partial<TextLanguage>;
   name?: Partial<TextLanguage>;
   schema?: string;
@@ -315,8 +315,6 @@ export interface GenericRelation {
 }
 
 export interface Concept extends EntityBase {
-  id: string;
-  uri: string;
   identifier: string;
   prefLabel: Partial<TextLanguage>;
   altLabel?: Partial<TextLanguage>[];
@@ -327,7 +325,6 @@ export interface Concept extends EntityBase {
   example: Partial<TextLanguage>;
   subject?: Partial<ConceptSubject>[];
   application?: Partial<TextLanguage>[];
-  harvest?: Partial<Harvest>;
   contactPoint?: Partial<ConceptContactPoint>;
   validFromIncluding?: string;
   validToIncluding?: string;
@@ -471,7 +468,6 @@ export interface PublicService extends EntityBase {
   euDataThemes?: EuDataTheme[];
   eurovocThemes?: EurovocTheme[];
   follows?: PublicServiceRule[];
-  harvest?: Partial<Harvest>;
   hasChannel?: PublicServiceChannel[];
   hasCompetentAuthority?: Partial<Organization>[];
   costs?: Cost[];
@@ -481,7 +477,6 @@ export interface PublicService extends EntityBase {
   hasParticipation?: PublicServiceParticipation[];
   holdsRequirement?: PublicServiceRequirement[];
   homepage?: string[];
-  id: string;
   identifier: string;
   isClassifiedBy?: Partial<Concept>[];
   isDescribedAt?: Partial<PublicService>[];
@@ -502,7 +497,6 @@ export interface PublicService extends EntityBase {
   thematicAreaUris?: string[];
   title: Partial<TextLanguage>;
   type: EntityType.PUBLIC_SERVICE;
-  uri: string;
 }
 export interface PublicServiceAddress {
   streetAddress: string;
@@ -512,13 +506,10 @@ export interface PublicServiceAddress {
 }
 
 export interface Event extends EntityBase {
-  id: string;
-  uri: string;
   identifier: string;
   title: Partial<TextLanguage>;
   description: Partial<TextLanguage>;
   dctType?: SkosConcept[];
-  harvest?: Partial<Harvest>;
   relation?: string[];
   specializedType?: SpecializedEventType;
 }
@@ -650,8 +641,6 @@ export interface DatasetWithIdentifier extends Dataset {
 }
 
 export interface Dataset extends EntityBase {
-  id: string;
-  uri: string;
   publisher: Partial<Organization>;
   title: Partial<TextLanguage>;
   description: Partial<TextLanguage>;
@@ -705,8 +694,6 @@ export interface DataService extends EntityBase {
   accessRights?: ReferenceDataCode;
   status?: ReferenceDataCode;
   availability?: ReferenceDataCode;
-  id: string;
-  uri: string;
   publisher: Partial<Organization>;
   title: Partial<TextLanguage>;
   description?: Partial<TextLanguage>;
@@ -715,7 +702,6 @@ export interface DataService extends EntityBase {
   isOpenAccess: boolean;
   isOpenLicense: boolean;
   isFree: boolean;
-  harvest?: Partial<Harvest>;
   fdkFormat?: Partial<MediaTypeOrExtent>[];
   endpointURL?: string[];
   endpointDescription?: string[];
