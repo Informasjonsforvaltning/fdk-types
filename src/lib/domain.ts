@@ -1227,12 +1227,21 @@ export interface PreviewTableRow {
   columns: string[];
 }
 
+/** Publisher on a search suggestion. `name` is a plain string, unlike `Organization`. */
+export interface SearchOrganization {
+  id?: string;
+  uri?: string;
+  orgPath?: string;
+  name?: string;
+  prefLabel?: Partial<TextLanguage>;
+}
+
 export interface SearchSuggestion {
   id: string;
   title?: Partial<TextLanguage>;
   description?: Partial<TextLanguage>;
   uri?: string;
-  organization?: Organization;
+  organization?: SearchOrganization;
   searchType: EntityType;
 }
 
