@@ -1244,10 +1244,12 @@ export type LlmSearchHitType =
   | "service"
   | "event";
 
+/** LLM search hit. `description` is the catalog text; `rationale` is the model's Markdown explanation. */
 export interface LlmSearchResult {
   id: string;
   title: string;
   description: string;
+  rationale: string;
   type: LlmSearchHitType;
   publisher: string;
   publisherId: string;
