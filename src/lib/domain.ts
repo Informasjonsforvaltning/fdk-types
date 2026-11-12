@@ -417,6 +417,8 @@ export interface PublicServiceInput {
   rdfType: string;
   language: PublicServiceLanguage[];
   page: string[];
+  isPartOf?: string[];
+  validityDuration?: string;
 }
 
 export interface PublicServiceAgent {
