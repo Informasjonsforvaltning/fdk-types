@@ -30,6 +30,7 @@ export interface SearchObject {
   relations?: Relation[];
   isAuthoritative?: boolean;
   dcatProfiles?: string[];
+  datasetType?: ReferenceDataCode[];
 }
 
 interface Catalog {
